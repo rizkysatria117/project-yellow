@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Made with hope.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <div class="bg-wrapper">
+        <div class="bg-layer bg-gradient"></div>
+        <div class="bg-layer bg-image"></div>
+        <div class="bg-layer bg-glow"></div>
+        <div class="bg-layer bg-noise"></div>
+        <canvas id="particleCanvas"></canvas>
+    </div>
+
+    <div class="custom-cursor" id="customCursor"></div>
+
+    <audio id="bgMusic" src="assets/music/yellow.mp3" loop></audio>
+    <div class="audio-control" id="audioControl">
+        <div class="music-bars">
+            <span></span><span></span><span></span><span></span>
+        </div>
+        <span class="audio-text">YELLOW</span>
+    </div>
+
+    <div class="intro-overlay" id="introOverlay">
+        <div class="star-center" id="introStar"></div>
+        <div class="intro-text" id="introText"></div>
+    </div>
+
+    <main class="main-container" id="mainContainer">
+        <section class="section hero-section" id="heroSection">
+            <div class="hero-content">
+                <h2 class="hero-subtext">HEY,</h2>
+                <h1 class="hero-title">Pute.</h1>
+                <div class="hero-question">
+                    <p>Can we talk...</p>
+                    <p class="italic-serif">just for a minute?</p>
+                </div>
+                <p class="hero-body">
+                    I know I hurt you. I don't expect everything to be fixed today.<br>
+                    I only hope you'll hear me out.
+                </p>
+                <div class="cta-wrapper">
+                    <button class="btn btn-primary" id="btnYes">💛 Hear Me Out</button>
+                    <div class="escape-container" id="escapeContainer">
+                        <button class="btn btn-secondary" id="btnNo">No, Leave Me Alone</button>
+                        <div class="speech-bubble" id="speechBubble">Really?</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="reveal-overlay" id="revealOverlay">
+            <div class="reveal-text-wrapper">
+                <p class="rev-text" id="rev1">Thank you...</p>
+                <p class="rev-text" id="rev2">For giving me</p>
+                <p class="rev-text" id="rev3">One more minute.</p>
+            </div>
+        </div>
+
+        <section class="section letter-section" id="letterSection">
+            <div class="envelope-wrapper" id="envelopeWrapper">
+                <div class="envelope">
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-paper">
+                        <div class="letter-content">
+                            <p class="letter-salutation">Hi Pute,</p>
+                            <p>I know I've hurt you.</p>
+                            <p>I know saying "I'm sorry" won't magically fix everything.</p>
+                            <p>But I wanted to create something instead of sending another ordinary message.</p>
+                            <p class="highlight-phrase">Every click. Every animation. Every line of code. Every hour.</p>
+                            <p>Was made with one hope.</p>
+                            <p class="script-text">To make you smile.</p>
+                            <p>Even if it's only for a moment.</p>
+                            <p>Thank you for opening this.</p>
+                            <p class="letter-signature">— Kiboy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary btn-continue" id="btnContinue">Continue</button>
+        </section>
+
+        <section class="section planner-section" id="plannerSection">
+            <div class="planner-grid">
+                <div class="polaroid-wrapper">
+                    <div class="polaroid">
+                        <div class="polaroid-img-frame">
+                            <img src="assets/images/couple.jpg" alt="Memory">
+                        </div>
+                        <div class="polaroid-caption">Us, beautifully.</div>
+                    </div>
+                </div>
+
+                <div class="planner-card">
+                    <h3 class="planner-title">If you're willing...</h3>
+                    <p class="planner-subtitle">Can we make one more beautiful memory?</p>
+                    <form class="planner-form" onsubmit="event.preventDefault();">
+                        <div class="form-group">
+                            <label>Select Date</label>
+                            <input type="date" id="planDate">
+                        </div>
+                        <div class="form-group">
+                            <label>Select Time</label>
+                            <input type="time" id="planTime">
+                        </div>
+                        <div class="form-group">
+                            <label>Choose Activity</label>
+                            <div class="activity-chips">
+                                <div class="chip active" data-value="Cafe">Cafe</div>
+                                <div class="chip" data-value="Sunset">Sunset</div>
+                                <div class="chip" data-value="Candle Light Dinner">Candle Light Dinner</div>
+                                <div class="chip" data-value="Movie">Movie</div>
+                                <div class="chip" data-value="Drive">Drive</div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-save" id="btnSave">Save Invitation</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="section ending-section" id="endingSection">
+            <div class="ending-content">
+                <p class="end-heading">Thank you.</p>
+                <p class="end-sub">Whatever your answer is...</p>
+                <p class="end-sub">Thank you for giving this website a chance.</p>
+                <div class="constellation-container">
+                    <canvas id="constellationCanvas"></canvas>
+                </div>
+                <div class="final-signature">
+                    <p class="tagline">Made with hope.</p>
+                    <p class="for-text">For Pute.</p>
+                    <p class="sig">— Kiboy</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="/script.js"></script>
+</body>
+</html>
